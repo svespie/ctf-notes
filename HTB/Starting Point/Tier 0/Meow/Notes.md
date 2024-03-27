@@ -4,18 +4,18 @@ Tags: #htb #startingpoint #very-easy #telnet #recon #weak_credentials #misconfig
 
 
 
-| IP                   | 10.129.96.145 |
-| -------------------- | ------------- |
-| Domain / Workgroup   |               |
-| Hostname             |               |
-| Host OS              | Linux         |
-| Host Architecture    |               |
-| Open Services        |               |
-| Vulnerabilities      |               |
-| User Accounts/Creds  |               |
-| Admin Accounts/Creds |               |
-| User Flag            |               |
-| Root Flag            |               |
+| IP                   |       |
+| -------------------- | ----- |
+| Domain / Workgroup   |       |
+| Hostname             |       |
+| Host OS              | Linux |
+| Host Architecture    |       |
+| Open Services        |       |
+| Vulnerabilities      |       |
+| User Accounts/Creds  |       |
+| Admin Accounts/Creds |       |
+| User Flag            |       |
+| Root Flag            |       |
 
 ##### Summary
 
