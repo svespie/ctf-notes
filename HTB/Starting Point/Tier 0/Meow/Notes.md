@@ -17,19 +17,19 @@ Tags: #htb #startingpoint #very-easy #telnet #recon #weak_credentials #misconfig
 | User Flag            |       |
 | Root Flag            |       |
 
-##### Summary
+### Summary
 
 
 
-##### Lessons Learned
+### Lessons Learned
 
 
 
-##### Notes
+### Notes
 
 
 
-##### Narrative
+### Narrative
 Default port scan:
 
 `$ sudo nmap -n --open --reason 10.129.96.145`
