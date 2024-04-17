@@ -36,13 +36,13 @@ Default port scan:
 
 `$ sudo nmap -n --open --reason 10.129.96.145`
 
-![[attachments/Pasted image 20240327122045.png]]
+![[../../../../_attachments/Pasted image 20240327122045.png]]
 
 Connecting to the telnet service provided a login interface after some time.
 
 $ telnet 10.129.96.145
 
-![[attachments/Pasted image 20240327122450.png]]
+![[../../../../_attachments/Pasted image 20240327122450.png]]
 
 Tried a few basic passwords. No dice.
 
@@ -50,7 +50,7 @@ Deeper port scan found only TCP 23 open (UDP not checked yet). Service scan on T
 
 `$ sudo nmap -n -p 23 -sCV 10.129.96.145`
 
-![[attachments/Pasted image 20240327123115.png]]
+![[../../../../_attachments/Pasted image 20240327123115.png]]
 
 With no much else to go on, a list of common telnet credentials was identified from SecLists:
 
@@ -58,24 +58,24 @@ With no much else to go on, a list of common telnet credentials was identified f
 
 I put all of the telnet-* default creds file into a single wordlist.
 
-![](attachments/Pasted%20image%2020240327220802.png)
+![](../../../../_attachments/Pasted%20image%2020240327220802.png)
 
 Hydra...
 
 `hydra -C creds.lst 10.129.168.164 telnet`
 
-![](attachments/Pasted%20image%2020240327220958.png)
+![](../../../../_attachments/Pasted%20image%2020240327220958.png)
 
 
 
-![](attachments/Pasted%20image%2020240327223044.png)
+![](../../../../_attachments/Pasted%20image%2020240327223044.png)
 
 Setting creds2.lst to the three credentials in the walkthrough, tested the response. It seems to work OK.
 
-![](attachments/Pasted%20image%2020240327223701.png)
+![](../../../../_attachments/Pasted%20image%2020240327223701.png)
 
 Trying the bigger list again, this was an interesting result:
 
-![](attachments/Pasted%20image%2020240327224004.png)
+![](../../../../_attachments/Pasted%20image%2020240327224004.png)
 
 I suspect that it may have been moving too quickly. When performing this manually, once "root" is entered for the login the server grants access right away without need for a password.
