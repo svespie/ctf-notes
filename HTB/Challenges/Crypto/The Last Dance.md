@@ -86,7 +86,7 @@ keystream = bytearray()
 for byte1, byte2 in zip(original_message, encrypted_message):
     keystream.append(byte1 ^ byte2)
 
-# the decrypted flag uses the same keystream as the original message, allowing a simple XOR to retrieve the plaintext
+# the encrypted flag originates from the same keystream as the original message, allowing a simple XOR to retrieve the plaintext
 decrypted_flag = bytearray()
 for byte1, byte2 in zip(keystream, encrypted_flag):
     decrypted_flag.append(byte1 ^ byte2)
