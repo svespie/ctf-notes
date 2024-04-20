@@ -95,3 +95,4 @@ print(decrypted_flag.decode())
 
 ```
 
+![](../../../_attachments/Pasted%20image%2020240419200025.png)
