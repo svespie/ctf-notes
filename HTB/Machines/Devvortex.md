@@ -3,18 +3,18 @@ Tags: #linux #htb #easy #joomla #CVE-2023-23752 #php-webshell #php-reverse-shell
 
 
 
-| IP                   | 10.10.11.242                                                                                                                                        |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Domain / Workgroup   |                                                                                                                                                     |
-| Hostname             | devvortex                                                                                                                                           |
-| Host OS              | Linux, Ubuntu, 5.4.0-167-generic                                                                                                                    |
-| Host Architecture    | x86_64                                                                                                                                              |
-| Open Services        | 22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.9<br>80/tcp open  http    nginx 1.18.0 (Ubuntu)                                                  |
-| Vulnerabilities      | Joomla permissions issues (CVE-2023-23752)<br>Sudo misconfiguration for logan user<br>Vulnerable apport (CVE-2023-1326)<br>Multiple password re-use |
-| User Accounts/Creds  |                                                                                                                                                     |
-| Admin Accounts/Creds |                                                                                                                                                     |
-| User Flag            | *redacted*                                                                                                                                          |
-| Root Flag            | *redacted*                                                                                                                                          |
+| IP                   | 10.10.11.242                                                                                                            |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Domain / Workgroup   |                                                                                                                         |
+| Hostname             | devvortex                                                                                                               |
+| Host OS              | Linux, Ubuntu, 5.4.0-167-generic                                                                                        |
+| Host Architecture    | x86_64                                                                                                                  |
+| Open Services        | 22/tcp open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.9<br>80/tcp open  http    nginx 1.18.0 (Ubuntu)                      |
+| Vulnerabilities      | Joomla permissions issues (CVE-2023-23752)<br>Sudo misconfiguration for logan user<br>Vulnerable apport (CVE-2023-1326) |
+| User Accounts/Creds  | lewis:P4ntherg0t1n5r3c0n## (joomla admin, mysql)<br>logan:tequieromucho                                                 |
+| Admin Accounts/Creds |                                                                                                                         |
+| User Flag            | *redacted*                                                                                                              |
+| Root Flag            | *redacted*                                                                                                              |
 
 ### Summary
 
