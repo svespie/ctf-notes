@@ -1,4 +1,3 @@
-{{date}} | {{time}}
 
 Tags: #linux #htb #easy #joomla #CVE-2023-23752 #php-webshell #php-reverse-shell #sudo #apport-cli #CVE-2023-1326
 
