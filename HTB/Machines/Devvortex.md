@@ -66,7 +66,7 @@ The site isn't real interesting. Neither is a basic directory bust:
 
 ![](../../_attachments/Pasted%20image%2020240422111616.png)
 
-A common tactic employed by CTF makers is to leverage virtual hosting. The scan is still running but we have something to check out while it finishes:
+A common tactic employed by CTF makers is to leverage virtual hosting.
 
 ![](../../_attachments/Pasted%20image%2020240422122206.png)
 
@@ -80,7 +80,7 @@ This leads to a Joomla admin login page. Searching for a possible bypass, led to
 
 ![](../../_attachments/Pasted%20image%2020240422174057.png)
 
-/administrator/manifests/files/joomla.xml
+`/administrator/manifests/files/joomla.xml`
 
 The version is 4.2.6. It seems that Joomla 4.2.6 is vulnerable to CVE-2023-23752:
 
