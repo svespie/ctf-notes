@@ -1,5 +1,7 @@
 {{date}} | {{time}}
 
+{{machine_screenshot}}
+
 Tags:
 
 
