@@ -23,13 +23,13 @@ This is an appropriately labeled "easy" machine that is more realistic than game
 
 In typical CTF fashion, only TCP 80 and 22 are open. The initial web app was fruitless, but virtual host enumeration revealed a second web application at dev.devvortex.htb. A directory enumeration revealed a Joomla admin portal.
 
-The Joomla admin portal led to the discovery of CVE-2023-23752, where there is a permissions issues on multiple files that potentially contain sensitive information. In this case, the initial set of credentials were exposed via /administrator/manifests/files/joomla.xml. These credentials allowed access to the administrator portal.
+The Joomla admin portal led to the discovery of CVE-2023-23752, where there is a permissions issue on multiple files that potentially contain sensitive information. In this case, the initial set of credentials for a user called lewis were exposed to unauthenticated users via */administrator/manifests/files/joomla.xml*. These credentials allowed access to the administrator portal.
 
-Initially, a webshell was published to the site as an extension/plugin. This became cumbersome and impossible and a more stable and interactive shell was required. Through the web shell, a PHP reverse shell was established and shortly thereafter upgraded via python3.
+Initially, a webshell was published to the site as an extension/plugin. This became cumbersome and a more stable and interactive shell was required. Through the web shell, a PHP reverse shell was established and shortly thereafter upgraded via python3.
 
 With an interactive shell, mysql was accessed using the same lewis credentials used to obtain admin access to the Joomla admin portal. From there, the users table was dumped and a bcrypt hash for the logan user was obtained. In typical CTF fashion, the rockyou wordlist was sufficient to crack this hash.
 
-Once able to SSH into the machine as the logan user, it was discovered that this user was able to sudo a debugging application called apport-cli. It didn't take long to discover a privilege escalation CVE related to this application: CVE-2023-1326. After triggering a crash, the exploit steps were executed to obtain root access.
+Once able to SSH into the machine as the logan user, it was discovered that this user was able to sudo a debugging application called apport-cli. It didn't take long to discover a privilege escalation CVE related to this application: CVE-2023-1326. After triggering a crash by killing the sleep command, the exploit steps were executed to obtain root access.
 
 ### Lessons Learned
 
