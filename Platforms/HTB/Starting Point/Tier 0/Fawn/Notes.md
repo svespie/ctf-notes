@@ -33,13 +33,13 @@ Initial port scan:
 
 `$ sudo nmap -n --open --reason 10.129.195.114`
 
-![](../../../../_attachments/Pasted%20image%2020240327224912.png)
+![](../../../../../_attachments/Pasted%20image%2020240327224912.png)
 
 Service scan on TCP 21:
 
 `$ sudo nmap -n -p 21 -sTV 10.129.195.114`
 
-![](../../../../_attachments/Pasted%20image%2020240327225255.png)
+![](../../../../../_attachments/Pasted%20image%2020240327225255.png)
 
 A quick look for an exploit for vsftpd 3.0.3 revealed that a remote DOS appears to be the only thing of note.
 
@@ -47,8 +47,8 @@ Attempted anonymous connection with nmap:
 
 $ sudo nmap -n -p 21 -sTV --script "ftp-anon and safe" 10.129.195.114
 
-![](../../../../_attachments/Pasted%20image%2020240327225728.png)
+![](../../../../../_attachments/Pasted%20image%2020240327225728.png)
 
 It looks like we can anonymously reach the flag. Sweet.
 
-![](../../../../_attachments/Pasted%20image%2020240327225855.png)
+![](../../../../../_attachments/Pasted%20image%2020240327225855.png)

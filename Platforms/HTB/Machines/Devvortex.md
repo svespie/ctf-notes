@@ -1,4 +1,4 @@
-![](../../_attachments/Pasted%20image%2020240422224916.png)
+![](../../../_attachments/Pasted%20image%2020240422224916.png)
 
 Tags: #linux #htb #easy #joomla #CVE-2023-23752 #php-webshell #php-reverse-shell #sudo #apport-cli #CVE-2023-1326
 
@@ -44,15 +44,15 @@ Turn off Windows defender before saving your plaintext notes locally. :)
 
 Initial port scan.
 
-![](../../_attachments/Pasted%20image%2020240422081903.png)
+![](../../../_attachments/Pasted%20image%2020240422081903.png)
 
 A more exhaustive TCP port scan was pretty much the same.
 
-![](../../_attachments/Pasted%20image%2020240422081957.png)
+![](../../../_attachments/Pasted%20image%2020240422081957.png)
 
 Service scan on TCP 22 and TCP 80:
 
-![](../../_attachments/Pasted%20image%2020240422082057.png)
+![](../../../_attachments/Pasted%20image%2020240422082057.png)
 
 This might be something to keep in mind but doesn't help us yet:
 
@@ -64,21 +64,21 @@ This may also be useful to keep in mind:
 
 The site isn't real interesting. Neither is a basic directory bust:
 
-![](../../_attachments/Pasted%20image%2020240422111616.png)
+![](../../../_attachments/Pasted%20image%2020240422111616.png)
 
 A common tactic employed by CTF makers is to leverage virtual hosting.
 
-![](../../_attachments/Pasted%20image%2020240422122206.png)
+![](../../../_attachments/Pasted%20image%2020240422122206.png)
 
 Directory busting on this virtually hosted subdomain reveals something interesting:
 
-![](../../_attachments/Pasted%20image%2020240422173524.png)
+![](../../../_attachments/Pasted%20image%2020240422173524.png)
 
 This leads to a Joomla admin login page. Searching for a possible bypass, led to this blog post identifying a potentially sensitive file exposed to unauthenticated users:
 
 [CVE-2023-23752: Joomla Authentication Bypass Vulnerability (pingsafe.com)](https://www.pingsafe.com/blog/cve-2023-23752-joomla-authentication-bypass-vulnerability/)
 
-![](../../_attachments/Pasted%20image%2020240422174057.png)
+![](../../../_attachments/Pasted%20image%2020240422174057.png)
 
 `/administrator/manifests/files/joomla.xml`
 
@@ -88,7 +88,7 @@ The version is 4.2.6. It seems that Joomla 4.2.6 is vulnerable to CVE-2023-23752
 
 Inspired by this blog post, the following request was made against the API (unauthenticated):
 
-![](../../_attachments/Pasted%20image%2020240422180750.png)
+![](../../../_attachments/Pasted%20image%2020240422180750.png)
 
 `lewis`
 `P4ntherg0t1n5r3c0n##`
@@ -107,11 +107,11 @@ We can, however, install an extension/plugin.
 
 Now simple curl commands can be used to execute commands against the target.
 
-![](../../_attachments/Pasted%20image%2020240422200635.png)
+![](../../../_attachments/Pasted%20image%2020240422200635.png)
 
 In obtaining the /etc/passwd file, we can see that the lone user is "logan".
 
-![](../../_attachments/Pasted%20image%2020240422201003.png)
+![](../../../_attachments/Pasted%20image%2020240422201003.png)
 
 We discovered we can write to the root directory, where we planted a PHP reverse shell:
 
@@ -125,33 +125,33 @@ python3 -c 'import pty;pty.spawn("/bin/bash")'
 
 Logged into mysql:
 
-![](../../_attachments/Pasted%20image%2020240422212529.png)
+![](../../../_attachments/Pasted%20image%2020240422212529.png)
 
 We found creds for a user called logan in sd4fg_users:
 
-![](../../_attachments/Pasted%20image%2020240422212712.png)
+![](../../../_attachments/Pasted%20image%2020240422212712.png)
 
 `logan`
 `$2y$10$IT4k5kmSGvHSO9d6M/1w0eYiB5Ne9XzArQRFJTGThNiy/yBtkIj12`
 
 Cracked with John the Ripper:
 
-![](../../_attachments/Pasted%20image%2020240422213124.png)
+![](../../../_attachments/Pasted%20image%2020240422213124.png)
 
 `logan`
 `tequieromucho`
 
 Successful SSH into the machine:
 
-![](../../_attachments/Pasted%20image%2020240422213303.png)
+![](../../../_attachments/Pasted%20image%2020240422213303.png)
 
 User flag is found in logan's home directory.
 
-![](../../_attachments/Pasted%20image%2020240422213447.png)
+![](../../../_attachments/Pasted%20image%2020240422213447.png)
 
 The logan user is able to run /usr/bin/apport-cli as sudo. 
 
-![](../../_attachments/Pasted%20image%2020240422214014.png)
+![](../../../_attachments/Pasted%20image%2020240422214014.png)
 
 This looks promising:
 
@@ -159,7 +159,7 @@ This looks promising:
 
 The basic premise is to trigger a crash dump and then exploit the vulnerability.
 
-![](../../_attachments/Pasted%20image%2020240422220330.png)
+![](../../../_attachments/Pasted%20image%2020240422220330.png)
 
 Once control is relinquished to the user, enter the following:
 
@@ -169,7 +169,7 @@ Once control is relinquished to the user, enter the following:
 
 Boom!
 
-![](../../_attachments/Pasted%20image%2020240422215915.png)
+![](../../../_attachments/Pasted%20image%2020240422215915.png)
 
 
 

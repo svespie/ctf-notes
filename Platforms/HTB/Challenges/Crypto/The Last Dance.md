@@ -4,7 +4,7 @@ CHALLENGE DESCRIPTION
 
 *To be accepted into the upper class of the Berford Empire, you had to attend the annual Cha-Cha Ball at the High Court. Little did you know that among the many aristocrats invited, you would find a burned enemy spy. Your goal quickly became to capture him, which you succeeded in doing after putting something in his drink. Many hours passed in your agency's interrogation room, and you eventually learned important information about the enemy agency's secret communications. Can you use what you learned to decrypt the rest of the messages?*
 
-![The Last Dance.zip](../../../_attachments/The%20Last%20Dance.zip)
+![The Last Dance.zip](../../../../_attachments/The%20Last%20Dance.zip)
 
 pw: hackthebox
 
@@ -16,7 +16,7 @@ Two files:
 
 out.txt appears to contain an encrypted message:
 
-![](../../../_attachments/Pasted%20image%2020240419144527.png)
+![](../../../../_attachments/Pasted%20image%2020240419144527.png)
 
 
 source.py
@@ -95,4 +95,4 @@ print(decrypted_flag.decode())
 
 ```
 
-![](../../../_attachments/Pasted%20image%2020240419200025.png)
+![](../../../../_attachments/Pasted%20image%2020240419200025.png)

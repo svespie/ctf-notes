@@ -4,7 +4,7 @@ CHALLENGE DESCRIPTION
 
 *You are after an organised crime group which is responsible for the illegal weapon market in your country. As a secret agent, you have infiltrated the group enough to be included in meetings with clients. During the last negotiation, you found one of the confidential messages for the customer. It contains crucial information about the delivery. Do you think you can decrypt it?*
 
-![BabyEncryption.zip](../../../_attachments/BabyEncryption.zip)
+![BabyEncryption.zip](../../../../_attachments/BabyEncryption.zip)
 
 PW: hackthebox
 
@@ -33,7 +33,7 @@ f.close()
 
 This straight forward script encrypts a message and writes it to file as a hex string.
 
-![](../../../_attachments/Pasted%20image%2020240419181615.png)
+![](../../../../_attachments/Pasted%20image%2020240419181615.png)
 The basic strategy is to basically reverse the encryption. This is possible because it is not very expensive computationally.
 
 ``` python
@@ -52,4 +52,4 @@ message_bytes = bytes(message)
 
 print(message_bytes.decode())
 ```
-![](../../../_attachments/Pasted%20image%2020240419200039.png)
+![](../../../../_attachments/Pasted%20image%2020240419200039.png)

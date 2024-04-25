@@ -4,7 +4,7 @@ CHALLENGE DESCRIPTION
 
 *Qubit Enterprises is a new company touting it's propriety method of qubit stabilization. They expect to be able to build a quantum computer that can factor a RSA-1024 number in the next 10 years. As a promotion they are giving out "time capsules" which contain a message for the future encrypted by 1024 bit RSA. They might be great engineers, but they certainly aren't cryptographers, can you find a way to read the message without having to wait for their futuristic machine?*
 
-![Baby_Time_Capsule.zip](../../../_attachments/Baby%20Time%20Capsule.zip)
+![Baby_Time_Capsule.zip](../../../../_attachments/Baby%20Time%20Capsule.zip)
 
 pw: hackthebox
 
