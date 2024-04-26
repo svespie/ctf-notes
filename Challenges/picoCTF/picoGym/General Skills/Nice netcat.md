@@ -1,4 +1,4 @@
-Tags: #picoCTF-2021 #netcat #nc 
+Tags: #picoCTF-2021 #netcat #nc #ascii #python
 
 https://play.picoctf.org/practice/challenge/156
 

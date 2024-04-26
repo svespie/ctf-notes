@@ -1,4 +1,4 @@
-Tags: #picoCTF-2021 
+Tags: #picoCTF-2021 #exiftool #metadata #base64
 
 https://play.picoctf.org/practice/challenge/147
 
