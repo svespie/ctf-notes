@@ -1,4 +1,4 @@
-Tags: #picoCTF-2024 #php-reverse-shell 
+Tags: #picoCTF-2024 #ssh 
 
 https://play.picoctf.org/practice/challenge/424
 
