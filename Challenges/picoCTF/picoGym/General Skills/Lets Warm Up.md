@@ -1,4 +1,4 @@
-Tags: #picoCTF-2019 #encoding #ascii 
+Tags: #picoCTF-2019 #encoding #ascii #hex
 
 https://play.picoctf.org/practice/challenge/22
 
