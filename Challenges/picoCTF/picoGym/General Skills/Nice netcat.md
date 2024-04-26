@@ -12,7 +12,9 @@ Hopefully it's still live. Also, it may have been updated by the time you are re
 
 ![](../../../../_attachments/Pasted%20image%2020240425201502.png)
 
-Well, that's interesting. These look like decimal values that could represent characters. A quick review of the ASCII table 
+Well, that's interesting. These look like decimal values that could represent characters. A quick review of the ASCII table suggests that these values might be decimal encodings of ASCII characters.
+
+[ASCII table - Table of ASCII codes, characters and symbols (ascii-code.com)](https://www.ascii-code.com/)
 
 Instead of translating this by hand, I opted to generate a script to help. This type of task is common in CTF challenges.
 
