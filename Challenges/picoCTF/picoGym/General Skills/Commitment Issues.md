@@ -14,5 +14,5 @@ Fortunately, we can search local commit logs for strings:
 
 ![](../../../../_attachments/Pasted%20image%2020240425220402.png)
 
-
+[Git - git-log Documentation (git-scm.com)](https://git-scm.com/docs/git-log)
 
